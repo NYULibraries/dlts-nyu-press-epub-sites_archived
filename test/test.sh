@@ -2,15 +2,29 @@
 
 ROOT=$(cd "$(dirname "$0")" ; cd ..; pwd -P )
 
-SITE=$1
+function testBuild() {
+    local site=$1
 
-CONFIG_FILE=test/${SITE}/conf.json
+    config_file=test/${site}/conf.json
+    build_got=$ROOT/build/
+    build_expected=$ROOT/test/${site}/expected-build/
 
-BUILD_GOT=$ROOT/build/
-BUILD_EXPECTED=$ROOT/test/${SITE}/expected-build/
+    cd $ROOT
 
-cd $ROOT
+    grunt --config-file=$config_file 1>/dev/null
 
-grunt --config-file=$CONFIG_FILE 1>/dev/null
+    diffCmd="diff -r $build_got $build_expected"
 
-diff -r $BUILD_GOT $BUILD_EXPECTED
+    eval "$diffCmd 1>/dev/null"
+
+    if [ $? -eq 0 ]
+    then
+        echo "OK: build ${site}"
+    else
+        echo >&2 "FAIL: build ${site}"
+        echo -e >&2 "\nTo see the differences, run:\n\n\t${diffCmd}\n"
+    fi
+}
+
+testBuild open-access-books
+
