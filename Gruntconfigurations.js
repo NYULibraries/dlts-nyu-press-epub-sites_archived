@@ -5,13 +5,13 @@ var grunt = require('grunt') ;
 function project () {
 
   var projectConfiguration ;
-  
-  var projectConfigurationFile = __dirname + '/source/json/conf.json' ;
-  
+
+  var projectConfigurationFile = grunt.option( 'source' ) + '/json/conf.json' ;
+
   if ( grunt.file.isFile ( projectConfigurationFile ) ) {
     projectConfiguration = grunt.file.readJSON ( projectConfigurationFile ) ;
   }
-  
+
   return projectConfiguration ;
 
 }
@@ -42,8 +42,8 @@ function sass () {
   
   var sass_conf;
   
-  if ( grunt.file.isFile( __dirname + '/source/json/sass.json' ) ) {
-    sass_conf = grunt.file.readJSON( __dirname + '/source/json/sass.json' ) ;  
+  if ( grunt.file.isFile( grunt.option( 'source' ) + '/json/sass.json' ) ) {
+    sass_conf = grunt.file.readJSON( grunt.option( 'source' ) + '/json/sass.json' ) ;
   }
   
   else {
@@ -66,7 +66,7 @@ function sass () {
   return {
     dist: {
       options: sass_conf.sass.options,
-      files: { 'build/css/style.css': __dirname + '/source/sass/style.scss' },
+      files: { 'build/css/style.css': grunt.option( 'source' ) + '/sass/style.scss' },
       build : sass_conf.sass.build
     }
   } ;
@@ -77,8 +77,8 @@ function js () {
 
   var js_conf;
 
-  if ( grunt.file.isFile( __dirname + '/source/json/js.json' ) ) {
-	js_conf = grunt.file.readJSON( __dirname + '/source/json/js.json' ) ;
+  if ( grunt.file.isFile( grunt.option( 'source' ) + '/json/js.json' ) ) {
+	js_conf = grunt.file.readJSON( grunt.option( 'source' ) + '/json/js.json' ) ;
   }
 	  
   else {
@@ -99,8 +99,8 @@ function copy () {
   return {
     main: {
       files: [
-        { expand: true, cwd: 'source/images', src: '**/*', dest: 'build/images' },
-        { expand: true, cwd: 'source/css', src: '**/*', dest: 'build/css' }        
+        { expand: true, cwd: grunt.option( 'source' ) + '/images', src: '**/*', dest: 'build/images' },
+        { expand: true, cwd: grunt.option( 'source' ) + '/css', src: '**/*', dest: 'build/css' }
       ]
     }
   } ;
@@ -115,7 +115,7 @@ function clean () {
 function uglify () {
   function targetsCallback() {
     var targets = {};
-    grunt.file.recurse(__dirname + '/source/js/', function callback (abspath, rootdir, subdir, filename) {
+    grunt.file.recurse(grunt.option( 'source' ) + '/js/', function callback (abspath, rootdir, subdir, filename) {
       if ( filename.match('.js') ) {
         targets['build/js/' + filename] = abspath ;
       }
@@ -138,7 +138,7 @@ function htmlminify () {
 
   var htmlminifyConfiguration = {} ;
 		  
-  var htmlminifyConfigurationFile = __dirname + '/source/json/htmlminify.json' ;
+  var htmlminifyConfigurationFile = grunt.option( 'source' ) + '/json/htmlminify.json' ;
 		  
   if ( grunt.file.isFile ( htmlminifyConfigurationFile ) ) {
 

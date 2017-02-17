@@ -15,6 +15,9 @@ module.exports = function ( grunt ) {
   /** task to run */
   var tasks = [ 'clean', 'copy', 'uglify', 'writehtml'] ;
 
+  // Temporarily hardcoding this
+  grunt.option( 'source', __dirname + '/source/open-access-books' );
+
   _.each ( tasks , function ( task ) {
 
     var gruntTask = 'grunt-contrib-' + task ;
