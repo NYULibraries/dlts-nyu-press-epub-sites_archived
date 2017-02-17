@@ -22,7 +22,6 @@ module.exports = function ( grunt ) {
     /** configure task */
     if ( _.isFunction ( configuration[task] ) ) {
       taskConfiguration[task] = configuration[task]() ;
-     
     }
 
     /** load modules and task */
