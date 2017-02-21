@@ -26,6 +26,7 @@ source/open-access-books/json/datasources/*
 
 # Ignore Intellij conf files
 .idea
+*.iml
 
 # project sub modules
 !node_modules/grunt-contrib-writehtml
