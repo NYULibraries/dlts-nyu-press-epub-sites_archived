@@ -12,6 +12,13 @@ build/*
 node_modules/*
 
 # configuration files
+source/connected-youth/json/conf.json
+source/connected-youth/json/sass.json
+source/connected-youth/json/htmlminify.json
+source/connected-youth/json/js.json
+source/connected-youth/json/compass.json
+source/connected-youth/json/datasources/*
+
 source/open-access-books/json/conf.json
 source/open-access-books/json/sass.json
 source/open-access-books/json/htmlminify.json
