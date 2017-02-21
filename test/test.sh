@@ -26,5 +26,6 @@ function testBuild() {
     fi
 }
 
-testBuild $1
+testBuild 'open-access-books'
+testBuild 'connected-youth'
 
