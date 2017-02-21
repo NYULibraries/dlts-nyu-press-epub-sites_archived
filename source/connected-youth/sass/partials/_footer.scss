@@ -1,0 +1,108 @@
+footer#pagefooter {
+  width: 100%;
+  background-color: $nyupurple;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    padding: 0 5px 0 0;
+    color: white;
+  }
+
+  li + li:before {
+    content: "|";
+    color: #999;
+  }
+
+  li > span {
+    padding: 0 0 0 10px;
+    display: inline-block;
+  }
+
+  li.social > span > span {
+    padding: auto;
+    width: 16px;
+  }
+
+  li, li a:link, li a:visited {
+    color: #efefef;
+    font-size: 13px;
+
+    /* Gotham  Light = 'Gotham 3r', 'Gotham A', 'Gotham B' */
+    font-family: $sans-fonts;
+    font-weight: normal;
+    font-weight: 300;
+  }
+
+  li a:hover {
+    color: white;
+  }
+}
+
+// .list-view footer#pagefooter {
+//   position: fixed;
+//   bottom: 0;
+//   left: 0;
+//   z-index: 2000;
+//   width: 100%;
+// }
+
+.footer-inner {
+  padding: 5px 0 7px 0;
+  color: white;
+  text-align: center;
+
+  // background-color: rgba(66, 0, 197, 0.9);
+  max-width: $sitewidth;
+  margin: 0 auto;
+}
+
+/* Sticky footer styles  http://getbootstrap.com/examples/sticky-footer/sticky-footer.css
+-------------------------------------------------- */
+
+html {
+  position: relative;
+  min-height: 100%;
+
+  // height: 100%;
+}
+
+body.page {
+  /* Margin bottom by footer height */
+ // margin-bottom: 32px;
+}
+
+body.page footer#pagefooter {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+}
+
+@media screen and (max-width: 450px) {
+  footer#pagefooter li a:link,
+  footer#pagefooter li a:visited {
+    margin-bottom: 1rem;
+    margin: 0px;
+  }
+
+  footer#pagefooter li#dlts-link a:link,
+  footer#pagefooter li#dlts-link a:visited {
+    padding-left: 0;
+  }
+
+ 
+  .footer-inner {
+    padding: 2px 0 5px;
+  }
+
+  body.page {
+    /* Margin bottom by footer height */
+    margin-bottom: 50px;
+  }
+
+}

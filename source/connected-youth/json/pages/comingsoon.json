@@ -1,0 +1,8 @@
+{
+  "comingsoon": {
+    "title" : "Coming Soon",
+    "route": "/comingsoon/index.html",
+    "template": "comingsoon.mustache",
+    "content": ""    
+  }
+}

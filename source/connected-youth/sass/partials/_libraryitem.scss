@@ -1,0 +1,96 @@
+.library-items {
+  margin-top: 10px;
+  /*    @include flexbox((display: flexbox, flex-flow: row wrap, flex-pack: justify), $version: 2); */
+  @include flexbox((display: flexbox, flex-flow: row wrap, flex-pack: justify), $version: 2);
+  /* @include flexbox((display: flex, flex-direction: row, flex-wrap: wrap)); */
+  @include flexbox((display: flex, flex-flow: row wrap, justify-content: space-between));
+  /***** */
+}
+
+.library-item {
+  // when there are more books, change this back to 400;
+  height: auto;
+  @include flexbox((flex: 1 1 451px), $version: 2);
+  @include flex(1 1 451px);
+  vertical-align: top;
+  float: none;
+  clear: both;
+  padding: 0;
+  @media screen and (min-width: 800px) {}
+  .book-title, .author {
+    white-space: normal;
+  }
+  .item-link {
+    display: block;
+  }
+  .item-link:hover .book-title {
+    // text-decoration: underline;
+ 
+  }
+  .img_hold {
+    // display: table-cell;
+    vertical-align: top;
+    width: 30%;
+    padding: 0px 15px 10px 0;
+    float: left;
+    max-width: 175px;
+  }
+  .book-info {
+    margin: 0px;
+    /*  max-height: 290px;*/
+    height: auto;
+    position: static;
+    vertical-align: top;
+    padding: 0 20px 20px 0;
+    // display: table-cell;
+    float: none;
+    width: auto;
+    overflow: hidden;
+  }
+  img {
+    margin: 0px;
+    position: static;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  .buttons {
+    // float: right;
+    // position: static;
+    width: auto;
+    padding-top: 10px;
+    margin-top: 0;
+    text-align: right;
+  }
+  .book-title {
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    padding-bottom: 5px;
+  }
+  .book-subtitle {
+    font-size: 1.3rem;
+ 
+    display:block;
+  }
+  a.details {
+    margin-right: 30px;
+    margin-top: 0;
+  }
+  .buttons a.btn {
+    display: inline-block;
+  }
+  .author {
+    margin-top: 0px;
+    padding: 0px 0 15px;
+    line-height: 1.25;
+    // font-size: 16px;
+    // color: #555;
+    /* #6FA64D*/
+  }
+  .description {
+    font: normal 14px / 1.4 $sans-fonts;
+    color: #333;
+  }
+}

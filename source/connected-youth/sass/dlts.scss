@@ -1,0 +1,291 @@
+/*
+ * Custom Skin for NYU Press Open Access Books site
+ */
+$sans-fonts: Helvetica, Arial, sans-serif;
+
+// NYU Colors
+$nyupurple: #57068c;
+$widemargin: 35px;
+$narrowmargin: 20px;
+$margin-bk-min: 701px;
+$margin-bk-max: 700px;
+$sitewidth: 950px;
+
+@import "compass/css3";
+@import "partials/_mixins";
+@import "partials/_libraryitem";
+@import "partials/_header";
+@import "partials/_searchbox";
+@import "partials/_detailitem";
+@import "partials/_footer";
+@import "partials/_bookpage";
+@import "partials/_hiding_YUI_items";
+
+
+html {
+  font-size: 100%;
+}
+body {
+  padding: 0;
+  min-width: 300px;
+ font-size: 15px;
+  @media screen and (min-width: $sitewidth) {
+    background-color: #ececec;
+  }
+
+  font-family: $sans-fonts;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+a:link,
+a:visited {
+  color: $nyupurple;
+}
+
+body.io-loading {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(../images/loading.gif);
+}
+
+/*a[target="_blank"] {
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-image: url(../images/ext_link_icon.svg);
+    padding-right: 13px;
+}*/
+
+a.btn {
+  color: #333;
+}
+
+#aboutlink {
+  padding-right: 25px;
+  height: 28px;
+  display: block;
+  background: url(../images/oa_logo_sprite.png) no-repeat right top;
+  vertical-align: bottom;
+  padding-top: 14px;
+}
+
+#aboutlink:hover {
+  background: url(../images/oa_logo_sprite.png) no-repeat right bottom;
+}
+
+/* overriding bootstrap */
+
+.breadcrumb {
+  background-color: #ffffff;
+  border-radius: 0px;
+  list-style: none outside none;
+  margin: 0 auto;
+  padding: 8px 20px 6px;
+
+  @media screen and (min-width: $margin-bk-min) {
+    padding: 8px $widemargin 6px;
+  }
+
+  border-bottom: 1px solid #dedede;
+  max-width: $sitewidth;
+}
+
+.sorter {
+  text-align: right;
+
+  span {
+    font-weight: bold;
+  }
+
+  a {
+    color: #333;
+    text-decoration: underline;
+    font-weight: normal;
+  }
+}
+
+.home {
+  .data-container {
+    
+    h2.page-title {
+      font-size: 17px;
+      margin: 30px 0 20px;
+      padding-top: 20px;
+    }
+
+    .intro {
+      /* Gotham  Screen Smart Light = font-family: 'Gotham SSm 3r', 'Gotham SSm A', 'Gotham SSm B';  */
+      /* font-family: 'Gotham SSm 3r', 'Gotham SSm A', 'Gotham SSm B';*/
+      font-weight: 300;
+      font-style: normal;
+      max-width: 900px;
+    }
+
+    .show-books {
+      max-width: 900px;
+      min-height: 400px;
+    }
+
+    p:first-child {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.about .main p {
+  max-width: 900px;
+}
+
+.data-container {
+  max-width: $sitewidth;
+  margin: 0 auto;
+  width: auto;
+  position: static;
+  background-color: white;
+  padding: 35px 20px  40px;
+
+  &.no-breadcrumb {
+    padding-top: 70px;
+  }
+
+  @media screen and (min-width: $margin-bk-min) {
+    padding: 35px $widemargin 70px;
+  }
+
+  h2.page-title {
+    padding: 0px 0;
+    text-transform: uppercase;
+    color: #333;
+    margin: 0 0 10px;
+    font-size: 19px;
+    line-height: 1.4;
+
+    /* Gotham  Screen Smart Light = font-family: 'Gotham SSm 3r', 'Gotham SSm A', 'Gotham SSm B';  */
+    font-family: "Gotham SSm 3r", "Gotham SSm A", "Gotham SSm B", $sans-fonts;
+    font-weight: normal;
+    font-weight: 300;
+    clear: both;
+    float: none;
+
+    a:link, a:visited {
+      color: #888888;
+    }
+  }
+}
+
+a.info-icon {
+  display: none;
+}
+
+.buttons .btn-default {
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+}
+
+.buttons .btn-default:hover {
+  background-color: #57068c;
+  color: #fff;
+
+  /* text-shadow: 0px 0 3px black;*/
+  border-color: #57068c;
+
+  /* box-shadow: inset 0px 0px 20px rgba(255, 255, 255, 0.3);*/
+}
+
+.no-cover-nyup {
+  background-color: #61777D;
+}
+
+/*#app-container {
+    padding: 0px 10px;
+    -webkit-overflow-scrolling: touch;
+}*/
+
+/*.item-link:hover,
+.item-link:hover .description {
+  text-decoration: none;
+  color: #333;
+}*/
+
+.more-books a {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  footer#pagefooter li#dlts-link:before {
+    content: "";
+  }
+}
+
+@media screen and (max-width: $margin-bk-max) {
+  .library-items {
+    margin: 1rem 0px 0px;
+  }
+
+  h2.page-title {
+    margin: 0px;
+  }
+
+  #search-toggle,
+  #search-toggle[style] {
+    border: none;
+    color: #888;
+    font: normal 12px / 1 arial;
+    padding: 10px;
+    display: block !important;
+    float: right;
+    opacity: .8;
+    width: 40px;
+    height: 40px;
+    background: transparent url("../images/s3.png") no-repeat center center;
+    background-size: 50%;
+    text-indent: -999em;
+  }
+
+  #search-toggle.open {
+    text-indent: 0;
+    background: none;
+  }
+
+  #search-toggle:focus {
+    outline: none;
+  }
+
+  #search-toggle::-moz-focus-inner {
+    border: 0;
+  }
+
+  .searchform {
+    display: none;
+  }
+
+  .searchform.open {
+    display: block;
+  }
+
+  .searchform input.searchbox {
+    width: 100%;
+    margin-top: 10px;
+    margin-right: 0;
+
+    /* 16px and up prevents autozoom in safari iOS */
+    font-size: 16px;
+  }
+
+  .buttons {
+    margin: 2em 0 0;
+  }
+
+  .buttons a {
+    margin: .5em 0;
+  }
+}
