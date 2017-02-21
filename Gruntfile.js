@@ -35,8 +35,16 @@ module.exports = function ( grunt ) {
       /** init Grunt */
       grunt.initConfig ( taskConfiguration )
   }
-  
+
   /** register Grunt tasks */
+  grunt.registerTask( 'connected-youth',
+                      function() {
+                          configureGruntTasks( 'connected-youth' );
+
+                          grunt.task.run( tasks );
+                      }
+  );
+
   grunt.registerTask( 'open-access-books',
                       function() {
                           configureGruntTasks( 'open-access-books' );

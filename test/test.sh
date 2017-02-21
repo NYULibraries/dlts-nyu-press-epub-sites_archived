@@ -11,7 +11,7 @@ function testBuild() {
 
     cd $ROOT
 
-    grunt --config-file=$config_file open-access-books 1>/dev/null
+    grunt --config-file=$config_file $site 1>/dev/null
 
     diffCmd="diff -r $build_got $build_expected"
 
@@ -26,5 +26,5 @@ function testBuild() {
     fi
 }
 
-testBuild open-access-books
+testBuild $1
 
