@@ -15,28 +15,36 @@ module.exports = function ( grunt ) {
   /** task to run */
   var tasks = [ 'clean', 'copy', 'uglify', 'writehtml'] ;
 
-  // Temporarily hardcoding this
-  grunt.option( 'source', __dirname + '/source/open-access-books' );
+  function configureGruntTasks( site ) {
+      grunt.option( 'source', __dirname + '/source/' + site );
 
-  _.each ( tasks , function ( task ) {
+      _.each ( tasks , function ( task ) {
 
-    var gruntTask = 'grunt-contrib-' + task ;
+          var gruntTask = 'grunt-contrib-' + task ;
 
-    /** configure task */
-    if ( _.isFunction ( configuration[task] ) ) {
-      taskConfiguration[task] = configuration[task]() ;
-    }
+          /** configure task */
+          if ( _.isFunction ( configuration[task] ) ) {
+              taskConfiguration[task] = configuration[task]() ;
+          }
 
-    /** load modules and task */
-    grunt.loadNpmTasks ( gruntTask ) ;
+          /** load modules and task */
+          grunt.loadNpmTasks ( gruntTask ) ;
 
-  } ) ;
+      } ) ;
 
-
-  /** init Grunt */
-  grunt.initConfig ( taskConfiguration ) ;
-
+      /** init Grunt */
+      grunt.initConfig ( taskConfiguration )
+  }
+  
   /** register Grunt tasks */
+  grunt.registerTask( 'open-access-books',
+                      function() {
+                          configureGruntTasks( 'open-access-books' );
+
+                          grunt.task.run( tasks );
+                      }
+  );
+
   grunt.registerTask( 'default' , tasks) ;
 
 } ;
