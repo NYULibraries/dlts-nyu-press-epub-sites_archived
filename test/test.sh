@@ -6,7 +6,7 @@ function testBuild() {
     local site=$1
 
     config_file=test/${site}/conf.json
-    build_got=$ROOT/build/
+    build_got=$ROOT/build/${site}
     build_expected=$ROOT/test/${site}/expected-build/
 
     cd $ROOT

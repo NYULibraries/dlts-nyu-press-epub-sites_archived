@@ -62,11 +62,13 @@ function sass () {
       }
     };  
   }
-  
+
+  var styleCssFile = grunt.option( 'destination' ) + '/css/style.css';
+
   return {
     dist: {
       options: sass_conf.sass.options,
-      files: { 'build/css/style.css': grunt.option( 'source' ) + '/sass/style.scss' },
+      files: { styleCssFile: grunt.option( 'source' ) + '/sass/style.scss' },
       build : sass_conf.sass.build
     }
   } ;
@@ -99,8 +101,8 @@ function copy () {
   return {
     main: {
       files: [
-        { expand: true, cwd: grunt.option( 'source' ) + '/images', src: '**/*', dest: 'build/images' },
-        { expand: true, cwd: grunt.option( 'source' ) + '/css', src: '**/*', dest: 'build/css' }
+        { expand: true, cwd: grunt.option( 'source' ) + '/images', src: '**/*', dest: grunt.option( 'destination' ) + '/images' },
+        { expand: true, cwd: grunt.option( 'source' ) + '/css', src: '**/*', dest: grunt.option( 'destination' ) + '/css' }
       ]
     }
   } ;
@@ -108,7 +110,7 @@ function copy () {
 
 function clean () {
   return [ 
-    __dirname + '/build'
+    grunt.option( 'destination' )
   ] ;
 }
 
@@ -117,7 +119,7 @@ function uglify () {
     var targets = {};
     grunt.file.recurse(grunt.option( 'source' ) + '/js/', function callback (abspath, rootdir, subdir, filename) {
       if ( filename.match('.js') ) {
-        targets['build/js/' + filename] = abspath ;
+        targets[grunt.option( 'destination' ) + '/js/' + filename] = abspath ;
       }
     });
     return targets ;

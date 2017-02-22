@@ -20,6 +20,7 @@ module.exports = function ( grunt ) {
 
   function configureGruntTasks( site ) {
       grunt.option( 'source', __dirname + '/source/' + site );
+      grunt.option( 'destination', __dirname + '/build/' + site );
 
       _.each ( tasks , function ( task ) {
 
