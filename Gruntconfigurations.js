@@ -41,9 +41,11 @@ function gitclone () {
 function sass () {
   
   var sass_conf;
-  
-  if ( grunt.file.isFile( grunt.option( 'sourceDir' ) + '/json/sass.json' ) ) {
-    sass_conf = grunt.file.readJSON( grunt.option( 'sourceDir' ) + '/json/sass.json' ) ;
+
+  const sourceDir = grunt.option( 'sourceDir' );
+
+  if ( grunt.file.isFile( sourceDir + '/json/sass.json' ) ) {
+    sass_conf = grunt.file.readJSON( sourceDir + '/json/sass.json' ) ;
   }
   
   else {
@@ -68,7 +70,7 @@ function sass () {
   return {
     dist: {
       options: sass_conf.sass.options,
-      files: { styleCssFile: grunt.option( 'sourceDir' ) + '/sass/style.scss' },
+      files: { styleCssFile: sourceDir + '/sass/style.scss' },
       build : sass_conf.sass.build
     }
   } ;
@@ -79,8 +81,9 @@ function js () {
 
   var js_conf;
 
-  if ( grunt.file.isFile( grunt.option( 'sourceDir' ) + '/json/js.json' ) ) {
-	js_conf = grunt.file.readJSON( grunt.option( 'sourceDir' ) + '/json/js.json' ) ;
+    const sourceDir = grunt.option( 'sourceDir' );
+    if ( grunt.file.isFile( sourceDir + '/json/js.json' ) ) {
+	js_conf = grunt.file.readJSON( sourceDir + '/json/js.json' ) ;
   }
 	  
   else {
@@ -98,11 +101,13 @@ function js () {
 }
 
 function copy () {
-  return {
+    const sourceDir = grunt.option( 'sourceDir' );
+    const destinationDir = grunt.option( 'destinationDir' );
+    return {
     main: {
       files: [
-        { expand: true, cwd: grunt.option( 'sourceDir' ) + '/images', src: '**/*', dest: grunt.option( 'destinationDir' ) + '/images' },
-        { expand: true, cwd: grunt.option( 'sourceDir' ) + '/css', src: '**/*', dest: grunt.option( 'destinationDir' ) + '/css' }
+        { expand: true, cwd: sourceDir + '/images', src: '**/*', dest: destinationDir + '/images' },
+        { expand: true, cwd: sourceDir + '/css', src: '**/*', dest: destinationDir + '/css' }
       ]
     }
   } ;
