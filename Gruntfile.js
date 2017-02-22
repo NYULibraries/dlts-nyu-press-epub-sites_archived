@@ -16,13 +16,15 @@ module.exports = function ( grunt ) {
 
   // TODO: Need to get cloneReadium working again
   /** task to run */
-  var tasks = [ 'clean', 'copy', 'uglify', 'writehtml'] ;
+  var npmTasks = [ 'clean', 'copy', 'uglify' ];
+  var localTasks = [ 'writehtml' ];
+  var tasks = npmTasks.concat( localTasks );
 
   function configureGruntTasks( site ) {
       grunt.option( 'sourceDir', __dirname + '/source/' + site );
       grunt.option( 'destinationDir', __dirname + '/build/' + site );
 
-      _.each ( tasks , function ( task ) {
+      _.each ( npmTasks , function ( task ) {
 
           var gruntTask = 'grunt-contrib-' + task ;
 
@@ -33,6 +35,18 @@ module.exports = function ( grunt ) {
 
           /** load modules and task */
           grunt.loadNpmTasks ( gruntTask ) ;
+
+      } ) ;
+
+      _.each ( localTasks , function ( task ) {
+
+          /** configure task */
+          if ( _.isFunction ( configuration[task] ) ) {
+              taskConfiguration[task] = configuration[task]() ;
+          }
+
+          /** load modules and task */
+          grunt.loadTasks ( 'lib/grunt-tasks/' + task + '/tasks' ) ;
 
       } ) ;
 
@@ -53,6 +67,6 @@ module.exports = function ( grunt ) {
       );
   } );
 
-  grunt.registerTask( 'default' , tasks) ;
+  grunt.registerTask( 'default' , tasks ) ;
 
 } ;
