@@ -2,6 +2,8 @@
 
 ROOT=$(cd "$(dirname "$0")" ; cd ..; pwd -P )
 
+test_result=0
+
 function testBuild() {
     local site=$1
 
@@ -24,6 +26,7 @@ function testBuild() {
     then
         echo "OK: build ${site}"
     else
+        test_result=1
         echo >&2 "FAIL: build ${site}"
         echo -e >&2 "\nTo see the differences, run:\n\n\t${diffCmd}\n"
     fi
@@ -32,3 +35,5 @@ function testBuild() {
 testBuild 'open-access-books'
 testBuild 'connected-youth'
 
+# For 'grunt test'
+exit $test_result
