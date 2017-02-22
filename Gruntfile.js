@@ -67,6 +67,9 @@ module.exports = function ( grunt ) {
       );
   } );
 
-  grunt.registerTask( 'default' , sites ) ;
+  // This doesn't work, only "connected-youth" task runs.  Might not be able to
+  // configure a task that runs all site builds in one grunt task without a major
+  // rewrite.
+  // grunt.registerTask( 'default' , sites ) ;
 
 } ;
