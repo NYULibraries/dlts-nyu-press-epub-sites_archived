@@ -122,7 +122,7 @@ function clean () {
 function uglify () {
   function targetsCallback() {
     var targets = {};
-    grunt.file.recurse(grunt.option( 'sourceDir' ) + '/js/', function callback (abspath, rootdir, subdir, filename) {
+    grunt.file.recurse(grunt.option( 'commonDir' ) + '/js/', function callback (abspath, rootdir, subdir, filename) {
       if ( filename.match('.js') ) {
         targets[grunt.option( 'destinationDir' ) + '/js/' + filename] = abspath ;
       }

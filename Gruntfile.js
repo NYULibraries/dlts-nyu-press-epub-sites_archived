@@ -6,6 +6,8 @@ module.exports = function ( grunt ) {
 
   'use strict' ;
 
+  const COMMON_DIR = '_common';
+
   var _ = require('underscore') ;
 
   var pkg = grunt.file.readJSON('package.json') ;
@@ -21,6 +23,7 @@ module.exports = function ( grunt ) {
   var tasks = npmTasks.concat( localTasks );
 
   function configureGruntTasks( site ) {
+      grunt.option( 'commonDir', __dirname + '/source/' + COMMON_DIR );
       grunt.option( 'sourceDir', __dirname + '/source/' + site );
       grunt.option( 'destinationDir', __dirname + '/build/' + site );
 
@@ -55,7 +58,10 @@ module.exports = function ( grunt ) {
   }
 
   /** register Grunt tasks */
-  var sites = fs.readdirSync( 'source/' );
+  var sites = fs.readdirSync( 'source/' )
+      .filter( function( directory ) {
+        return directory !== COMMON_DIR;
+      } );
 
   sites.forEach( function( site ) {
       grunt.registerTask( site,
