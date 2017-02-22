@@ -28,6 +28,7 @@
   "license": "ISC",
   "homepage": "https://github.com/NYULibraries/nyupress-epubs-site",
   "dependencies": {
+    "grunt-exec": "^1.0.1",
     "grunt-git": "^0.3.5",
     "html-entities": "^1.1.2",
     "html-minifier": "^0.7.2"
