@@ -19,8 +19,8 @@ module.exports = function ( grunt ) {
   var tasks = [ 'clean', 'copy', 'uglify', 'writehtml'] ;
 
   function configureGruntTasks( site ) {
-      grunt.option( 'source', __dirname + '/source/' + site );
-      grunt.option( 'destination', __dirname + '/build/' + site );
+      grunt.option( 'sourceDir', __dirname + '/source/' + site );
+      grunt.option( 'destinationDir', __dirname + '/build/' + site );
 
       _.each ( tasks , function ( task ) {
 

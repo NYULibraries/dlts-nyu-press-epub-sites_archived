@@ -6,7 +6,7 @@ function project () {
 
   var projectConfiguration ;
 
-  var projectConfigurationFile = grunt.option( 'source' ) + '/json/conf.json' ;
+  var projectConfigurationFile = grunt.option( 'sourceDir' ) + '/json/conf.json' ;
 
   if ( grunt.file.isFile ( projectConfigurationFile ) ) {
     projectConfiguration = grunt.file.readJSON ( projectConfigurationFile ) ;
@@ -42,8 +42,8 @@ function sass () {
   
   var sass_conf;
   
-  if ( grunt.file.isFile( grunt.option( 'source' ) + '/json/sass.json' ) ) {
-    sass_conf = grunt.file.readJSON( grunt.option( 'source' ) + '/json/sass.json' ) ;
+  if ( grunt.file.isFile( grunt.option( 'sourceDir' ) + '/json/sass.json' ) ) {
+    sass_conf = grunt.file.readJSON( grunt.option( 'sourceDir' ) + '/json/sass.json' ) ;
   }
   
   else {
@@ -63,12 +63,12 @@ function sass () {
     };  
   }
 
-  var styleCssFile = grunt.option( 'destination' ) + '/css/style.css';
+  var styleCssFile = grunt.option( 'destinationDir' ) + '/css/style.css';
 
   return {
     dist: {
       options: sass_conf.sass.options,
-      files: { styleCssFile: grunt.option( 'source' ) + '/sass/style.scss' },
+      files: { styleCssFile: grunt.option( 'sourceDir' ) + '/sass/style.scss' },
       build : sass_conf.sass.build
     }
   } ;
@@ -79,8 +79,8 @@ function js () {
 
   var js_conf;
 
-  if ( grunt.file.isFile( grunt.option( 'source' ) + '/json/js.json' ) ) {
-	js_conf = grunt.file.readJSON( grunt.option( 'source' ) + '/json/js.json' ) ;
+  if ( grunt.file.isFile( grunt.option( 'sourceDir' ) + '/json/js.json' ) ) {
+	js_conf = grunt.file.readJSON( grunt.option( 'sourceDir' ) + '/json/js.json' ) ;
   }
 	  
   else {
@@ -101,8 +101,8 @@ function copy () {
   return {
     main: {
       files: [
-        { expand: true, cwd: grunt.option( 'source' ) + '/images', src: '**/*', dest: grunt.option( 'destination' ) + '/images' },
-        { expand: true, cwd: grunt.option( 'source' ) + '/css', src: '**/*', dest: grunt.option( 'destination' ) + '/css' }
+        { expand: true, cwd: grunt.option( 'sourceDir' ) + '/images', src: '**/*', dest: grunt.option( 'destinationDir' ) + '/images' },
+        { expand: true, cwd: grunt.option( 'sourceDir' ) + '/css', src: '**/*', dest: grunt.option( 'destinationDir' ) + '/css' }
       ]
     }
   } ;
@@ -110,16 +110,16 @@ function copy () {
 
 function clean () {
   return [ 
-    grunt.option( 'destination' )
+    grunt.option( 'destinationDir' )
   ] ;
 }
 
 function uglify () {
   function targetsCallback() {
     var targets = {};
-    grunt.file.recurse(grunt.option( 'source' ) + '/js/', function callback (abspath, rootdir, subdir, filename) {
+    grunt.file.recurse(grunt.option( 'sourceDir' ) + '/js/', function callback (abspath, rootdir, subdir, filename) {
       if ( filename.match('.js') ) {
-        targets[grunt.option( 'destination' ) + '/js/' + filename] = abspath ;
+        targets[grunt.option( 'destinationDir' ) + '/js/' + filename] = abspath ;
       }
     });
     return targets ;
@@ -140,7 +140,7 @@ function htmlminify () {
 
   var htmlminifyConfiguration = {} ;
 		  
-  var htmlminifyConfigurationFile = grunt.option( 'source' ) + '/json/htmlminify.json' ;
+  var htmlminifyConfigurationFile = grunt.option( 'sourceDir' ) + '/json/htmlminify.json' ;
 		  
   if ( grunt.file.isFile ( htmlminifyConfigurationFile ) ) {
 
