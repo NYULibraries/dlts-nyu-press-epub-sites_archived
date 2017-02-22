@@ -46,7 +46,7 @@ module.exports = function ( grunt ) {
           }
 
           /** load modules and task */
-          grunt.loadTasks ( 'lib/grunt-tasks/' + task + '/tasks' ) ;
+          grunt.loadTasks ( 'lib/grunt-tasks/' + task ) ;
 
       } ) ;
 
