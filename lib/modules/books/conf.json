@@ -21,7 +21,7 @@
   "stage" : {
     "request" : {
       "books" : {
-        "src" : "http://dev-discovery.dlib.nyu.edu:8080/solr3_discovery/nyupress/select",
+        "src" : "http://stagediscovery.dlib.nyu.edu:8080/solr3_discovery/nyupress/select",
         "dest" : "books.json"
       }
     }

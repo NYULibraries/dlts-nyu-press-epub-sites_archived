@@ -67,6 +67,6 @@ module.exports = function ( grunt ) {
       );
   } );
 
-  grunt.registerTask( 'default' , tasks ) ;
+  grunt.registerTask( 'default' , sites ) ;
 
 } ;
