@@ -1,12 +1,14 @@
 /* jshint laxcomma: true, laxbreak: true, unused: false */
 
+const child_process = require( 'child_process' );
 const fs = require( 'fs' );
 
 module.exports = function ( grunt ) {
 
   'use strict' ;
 
-  const COMMON_DIR = '_common';
+  const COMMON_DIR  = '_common';
+  const TEST_SCRIPT = 'test/test.sh';
 
   var _ = require('underscore') ;
 
