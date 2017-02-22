@@ -1,4 +1,7 @@
 /* jshint laxcomma: true, laxbreak: true, unused: false */
+
+const fs = require( 'fs' );
+
 module.exports = function ( grunt ) {
 
   'use strict' ;
@@ -37,21 +40,17 @@ module.exports = function ( grunt ) {
   }
 
   /** register Grunt tasks */
-  grunt.registerTask( 'connected-youth',
-                      function() {
-                          configureGruntTasks( 'connected-youth' );
+  var sites = fs.readdirSync( 'source/' );
 
-                          grunt.task.run( tasks );
-                      }
-  );
+  sites.forEach( function( site ) {
+      grunt.registerTask( site,
+                          function() {
+                              configureGruntTasks( site );
 
-  grunt.registerTask( 'open-access-books',
-                      function() {
-                          configureGruntTasks( 'open-access-books' );
-
-                          grunt.task.run( tasks );
-                      }
-  );
+                              grunt.task.run( tasks );
+                          }
+      );
+  } );
 
   grunt.registerTask( 'default' , tasks) ;
 
