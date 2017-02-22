@@ -9,6 +9,9 @@ function testBuild() {
     build_got=$ROOT/build/${site}
     build_expected=$ROOT/test/${site}/expected-build/
 
+    # Don't count on 'grunt clean' running successfully.
+    rm -fr $build_got
+
     cd $ROOT
 
     grunt --config-file=$config_file $site 1>/dev/null
