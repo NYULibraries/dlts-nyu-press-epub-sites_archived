@@ -9,6 +9,8 @@ NYUPressOA/i18n/*
 
 # build files
 build/*
+!build/.commit-empty-directory
+
 node_modules/*
 
 # configuration files
