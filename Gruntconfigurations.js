@@ -2,20 +2,6 @@
 
 var grunt = require('grunt') ;
 
-function project () {
-
-  var projectConfiguration ;
-
-  var projectConfigurationFile = grunt.option( 'sourceDir' ) + '/json/conf.json' ;
-
-  if ( grunt.file.isFile ( projectConfigurationFile ) ) {
-    projectConfiguration = grunt.file.readJSON ( projectConfigurationFile ) ;
-  }
-
-  return projectConfiguration ;
-
-}
-
 /** merge with compass */
 function sass () {
   
@@ -142,6 +128,5 @@ exports.copy = copy ;
 exports.clean = clean ;
 exports.uglify = uglify ;
 exports.js = js ;
-exports.project = project ;
 exports.sass = sass ;
 exports.htmlminify = htmlminify ;
