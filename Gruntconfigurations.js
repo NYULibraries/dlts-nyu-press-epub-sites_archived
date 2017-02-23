@@ -2,41 +2,6 @@
 
 var grunt = require('grunt') ;
 
-function project () {
-
-  var projectConfiguration ;
-
-  var projectConfigurationFile = grunt.option( 'sourceDir' ) + '/json/conf.json' ;
-
-  if ( grunt.file.isFile ( projectConfigurationFile ) ) {
-    projectConfiguration = grunt.file.readJSON ( projectConfigurationFile ) ;
-  }
-
-  return projectConfiguration ;
-
-}
-
-function gitclone () {
-
-  var projectConfiguration = project () ;	
-  
-  var readiumDirectory =  ( projectConfiguration.readiumDirectory !== '' ) ? projectConfiguration.readiumDirectory : __dirname + '/build' ;
-
-  return { 
-    clone : {
-      options : {
-        repository : projectConfiguration.readiumRepositoryURL,
-        branch : projectConfiguration.readiumRepositoryBranch,
-        directory: readiumDirectory ,
-        directoryName: projectConfiguration.readiumDirectoryName,
-        booksDirectory: projectConfiguration.readiumBooksDirectory,
-        clone : projectConfiguration.readiumCloneFromSource
-      }
-    }
-  }
-  
-}
-
 /** merge with compass */
 function sass () {
   
@@ -163,7 +128,5 @@ exports.copy = copy ;
 exports.clean = clean ;
 exports.uglify = uglify ;
 exports.js = js ;
-exports.project = project ;
 exports.sass = sass ;
 exports.htmlminify = htmlminify ;
-exports.gitclone = gitclone ;
