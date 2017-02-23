@@ -16,27 +16,6 @@ function project () {
 
 }
 
-function gitclone () {
-
-  var projectConfiguration = project () ;	
-  
-  var readiumDirectory =  ( projectConfiguration.readiumDirectory !== '' ) ? projectConfiguration.readiumDirectory : __dirname + '/build' ;
-
-  return { 
-    clone : {
-      options : {
-        repository : projectConfiguration.readiumRepositoryURL,
-        branch : projectConfiguration.readiumRepositoryBranch,
-        directory: readiumDirectory ,
-        directoryName: projectConfiguration.readiumDirectoryName,
-        booksDirectory: projectConfiguration.readiumBooksDirectory,
-        clone : projectConfiguration.readiumCloneFromSource
-      }
-    }
-  }
-  
-}
-
 /** merge with compass */
 function sass () {
   
@@ -166,4 +145,3 @@ exports.js = js ;
 exports.project = project ;
 exports.sass = sass ;
 exports.htmlminify = htmlminify ;
-exports.gitclone = gitclone ;
