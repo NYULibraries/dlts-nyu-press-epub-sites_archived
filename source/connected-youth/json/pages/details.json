@@ -1,5 +1,3 @@
 {
-  "details/*": { 
-    "title" : "Book details", "callback" : "detail_pages" 
-  }
+  "details/*": { "callback" : "detail_pages" }
 }
