@@ -1,3 +1,7 @@
 {
-  "details/*": { "callback" : "detail_pages" }
+  "details/*": {
+    "callback" : "books",
+    "route" : "details",
+    "template" : "detail_pages.mustache"
+  }
 }
