@@ -88,6 +88,11 @@ module.exports = function ( grunt ) {
 
   } );
 
+  // If running in test mode, use request stub
+  if ( grunt.option( 'test' ) ) {
+      grunt.option( 'request', function() { console.log( 'Hello stub!' ) } );
+  }
+
   // This doesn't work, only "connected-youth" task runs.  Might not be able to
   // configure a task that runs all site builds in one grunt task without a major
   // rewrite.
