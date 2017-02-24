@@ -7,9 +7,9 @@ test_result=0
 function testBuild() {
     local site=$1
 
-    config_file=test/${site}/conf.json
+    config_file=test/sites/${site}/conf.json
     build_got=$ROOT/build/${site}
-    build_expected=$ROOT/test/${site}/expected-build/
+    build_expected=$ROOT/test/sites/${site}/expected-build/
 
     # Don't count on 'grunt clean' running successfully.
     rm -fr $build_got
