@@ -1,19 +1,41 @@
-NYU Press Open Access Books
-===========================
+NYU Press EPUB Sites
+====================
 
-A site for viewing and displaying epub books: http://openaccessbooks.nyupress.org/
+Main repo for the building and testing of NYU Press websites:
 
-This repo replaces the original: [nyupress-epubs-site](https://github.com/NYULibraries/nyupress-epubs-site).
+* [Connected Youth](http://connectedyouth.nyupress.org/)
+* [Open Access Books](http://openaccessbooks.nyupress.org/)
 
-### Get the project
-`git clone git@github.com:NYULibraries/dlts-open-access-books.git oa-books`
+This repo replaces the original, individual repos:
 
-### Install dependencies 
-`npm install`
+* [dlts-connected-youth](https://github.com/NYULibraries/dlts-connected-youth)
+* [dlts-open-access-books](https://github.com/NYULibraries/dlts-open-access-books)
 
-### Change to match your environment and save.
-`cp source/json/default.conf.json source/json/conf.json`
+### Setup
+
+```bash
+git clone git@github.com:NYULibraries/dlts-nyu-press-epub-sites.git nyu-press-epub-sites`
+npm install
+cd source/connected-youth/json/
+cp default.conf.json conf.json
+# Edit conf.json
+cd ../../open-access-books/json/
+cp default.conf.json conf.json
+# Edit conf.json
+```
 
 ### Build
 
-`grunt`
+`grunt connected-youth`
+
+`grunt open-access-books`
+
+### Test
+
+`test/test.sh`
+
+...or...
+
+Convenience wrapper for test/test.sh:
+
+`grunt test`
