@@ -16,7 +16,7 @@ function testBuild() {
 
     cd $ROOT
 
-    grunt --config-file=$config_file $site 1>/dev/null
+    grunt $site --config-file=$config_file --test 1>/dev/null
 
     diffCmd="diff -r $build_got $build_expected"
 
