@@ -2,6 +2,6 @@
   "details/*": {
     "callback" : "books",
     "route" : "details",
-    "template" : "detail_pages.mustache"
+    "template" : "details.mustache"
   }
 }
