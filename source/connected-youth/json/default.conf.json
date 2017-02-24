@@ -6,14 +6,7 @@
   "discovery": "http://localhost:8080/solr",
   "environment": "development",
 
-  "readiumCloneFromSource" : true,
   "readiumUrl" : "http://readium/readium-js-viewer/dist",
-  "readiumBooksDirectory" : "/Applications/MAMP/htdocs/epub_content",
-  "readiumRepositoryURL" : "git@github.com:elgiovanno/readium-js-viewer.git",
-  "readiumDirectory" : "/Applications/MAMP/htdocs/readium-js-viewer",
-  "readiumDirectoryName" : "readium-js-viewer",
-
-  "readiumRepositoryBranch" : "master",
 
   "EnableGoogleAnalytics": true,
   "GoogleAnalyticsUA" : "[DISABLED]",

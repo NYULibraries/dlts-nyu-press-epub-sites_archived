@@ -1,3 +1,7 @@
 {
-  "book/*": { "callback" : "books" }
+  "book/*": {
+    "callback" : "books",
+    "route" : "book",
+    "template" : "book.mustache"
+  }
 }

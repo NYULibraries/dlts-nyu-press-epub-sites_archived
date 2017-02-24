@@ -1,12 +1,14 @@
 /* jshint laxcomma: true, laxbreak: true, unused: false */
 
+const child_process = require( 'child_process' );
 const fs = require( 'fs' );
 
 module.exports = function ( grunt ) {
 
   'use strict' ;
 
-  const COMMON_DIR = '_common';
+  const COMMON_DIR  = '_common';
+  const TEST_SCRIPT = 'test/test.sh';
 
   var _ = require('underscore') ;
 
@@ -16,7 +18,6 @@ module.exports = function ( grunt ) {
 
   var taskConfiguration = { pkg : pkg } ;
 
-  // TODO: Need to get cloneReadium working again
   /** task to run */
   var npmTasks = [ 'clean', 'copy', 'uglify' ];
   var localTasks = [ 'writehtml' ];
@@ -71,6 +72,20 @@ module.exports = function ( grunt ) {
                               grunt.task.run( tasks );
                           }
       );
+  } );
+
+  // For convenience, add a grunt task for running the test script.
+  grunt.registerTask( 'test', function() {
+    var testResults;
+
+    try {
+        testResults = child_process.execSync( TEST_SCRIPT );
+        console.log( testResults.toString() );
+    } catch( error ) {
+        console.log( error.stdout.toString() );
+        return false;
+    }
+
   } );
 
   // This doesn't work, only "connected-youth" task runs.  Might not be able to
