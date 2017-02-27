@@ -10,7 +10,7 @@
 
   "environment": "test",
 
-  "readiumUrl" : "http://openaccessbooks-test.nyupress.org/oabooks-reader",
+  "readiumUrl" : "http://connectedyouth-test.nyupress.org/oabooks-reader",
 
   "EnableGoogleAnalytics": true,
   "GoogleAnalyticsUA" : "[DISABLED]",
