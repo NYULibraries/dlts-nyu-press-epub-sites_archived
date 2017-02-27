@@ -1,0 +1,16 @@
+{
+  "appName": "New York University Press",
+
+  "collectionCode": "connected-youth",
+
+  "appUrl": "http://connectedyouth-stage.nyupress.org",
+  "appRoot": "",
+
+  "discovery": "http://stagediscovery.dlib.nyu.edu:8080/solr3_discovery/nyupress",
+
+  "readiumUrl" : "http://connectedyouth-stage.nyupress.org/oabooks-reader",
+
+  "EnableGoogleAnalytics": true,
+  "GoogleAnalyticsUA" : "[DISABLED]",
+  "GoogleAnalyticsDomain" : "[DISABLED]"
+}
