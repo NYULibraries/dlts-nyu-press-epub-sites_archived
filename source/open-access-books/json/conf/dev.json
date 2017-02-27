@@ -1,0 +1,16 @@
+{
+  "appName": "New York University Press",
+
+  "collectionCode": "oa-books",
+
+  "appUrl": "http://openaccessbooks-dev.nyupress.org",
+  "appRoot": "",
+
+  "discovery": "http://dev-discovery.dlib.nyu.edu:8080/solr3_discovery/nyupress",
+
+  "readiumUrl" : "http://openaccessbooks-dev.nyupress.org/oabooks-reader",
+
+  "EnableGoogleAnalytics": false,
+  "GoogleAnalyticsUA" : "[DISABLED]",
+  "GoogleAnalyticsDomain" : "[DISABLED]"
+}
