@@ -1,17 +1,15 @@
 {
   "appName": "New York University Press",
+
   "collectionCode": "oa-books",
+
   "appUrl": "http://openaccessbooks-dev.nyupress.org",
   "appRoot": "",
+
   "discovery": "http://dev-discovery.dlib.nyu.edu:8080/solr3_discovery/nyupress",
-  "environment": "development",
-  "readiumCloneFromSource" : true,
+
   "readiumUrl" : "http://openaccessbooks-dev.nyupress.org/oabooks-reader",
-  "readiumBooksDirectory" : "/content/dev/nyupress/epub_content",
-  "readiumRepositoryURL" : "git@github.com:elgiovanno/readium-js-viewer.git",
-  "readiumDirectory" : "/www/sites/oabooks-reader",
-  "readiumDirectoryName" : "readium-js-viewer",
-  "readiumRepositoryBranch" : "master",
+
   "EnableGoogleAnalytics": false,
   "GoogleAnalyticsUA" : "[DISABLED]",
   "GoogleAnalyticsDomain" : "[DISABLED]"
