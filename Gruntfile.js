@@ -45,7 +45,7 @@ module.exports = function ( grunt ) {
       } else {
           grunt.option(
               'config-file',
-              __dirname + '/source/' + site + '/json/' + environment + '.json'
+              __dirname + '/source/' + site + '/json/conf/' + environment + '.json'
           );
       }
 

@@ -1,0 +1,18 @@
+{
+  "appName": "New York University Press",
+  "collectionCode": "connected-youth",
+  "appUrl": "http://connectedyouth.nyupress.org",
+  "appRoot": "",
+  "discovery": "http://discovery.dlib.nyu.edu:8080/solr3_discovery/nyupress",
+  "environment": "production",
+  "readiumCloneFromSource" : true,
+  "readiumUrl" : "http://connectedyouth.nyupress.org/oabooks-reader",
+  "readiumBooksDirectory" : "/content/prod/nyupress/epub_content",
+  "readiumRepositoryURL" : "git@github.com:elgiovanno/readium-js-viewer.git",
+  "readiumDirectory" : "/www/sites/oabooks-reader",
+  "readiumDirectoryName" : "readium-js-viewer",
+  "readiumRepositoryBranch" : "master",
+  "EnableGoogleAnalytics": true,
+  "GoogleAnalyticsUA" : "UA-51495518-3",
+  "GoogleAnalyticsDomain" : "nyupress.org"
+}
