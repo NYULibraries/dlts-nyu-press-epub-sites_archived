@@ -9,6 +9,7 @@ module.exports = function ( grunt ) {
 
   const COMMON_DIR  = '_common';
   const TEST_SCRIPT = 'test/test.sh';
+  const VALID_ENVIRONMENTS = [ 'local', 'test', 'dev', 'stage', 'prod', ];
 
   var _ = require('underscore') ;
 
@@ -27,6 +28,26 @@ module.exports = function ( grunt ) {
       grunt.option( 'commonDir', __dirname + '/source/' + COMMON_DIR );
       grunt.option( 'sourceDir', __dirname + '/source/' + site );
       grunt.option( 'destinationDir', __dirname + '/build/' + site );
+
+      var environment = grunt.task.current.args[ 0 ];
+      if ( ! VALID_ENVIRONMENTS.includes( environment ) ) {
+        grunt.fail.fatal( '"' + environment + '" is not a valid environment.' +
+          '  Please specify one of the following:\n\t' +
+          site + ':' + VALID_ENVIRONMENTS.join( '\n\t' + site + ':' ) );
+      }
+
+      if ( environment === 'test' ) {
+          grunt.option(
+              'config-file',
+              __dirname + '/test/sites/' + site + '/test.json'
+          );
+          grunt.option( 'request', require( './test/lib/solr-stub' ).request );
+      } else {
+          grunt.option(
+              'config-file',
+              __dirname + '/source/' + site + '/json/' + environment + '.json'
+          );
+      }
 
       _.each ( npmTasks , function ( task ) {
 
@@ -87,11 +108,6 @@ module.exports = function ( grunt ) {
     }
 
   } );
-
-  // If running in test mode, use request stub
-  if ( grunt.option( 'test' ) ) {
-      grunt.option( 'request', require( './test/lib/solr-stub' ).request );
-  }
 
   // This doesn't work, only "connected-youth" task runs.  Might not be able to
   // configure a task that runs all site builds in one grunt task without a major
