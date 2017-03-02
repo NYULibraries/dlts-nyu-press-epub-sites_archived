@@ -10,7 +10,7 @@
 
   "readiumUrl" : "http://connectedyouth-stage.nyupress.org/oabooks-reader",
 
-  "EnableGoogleAnalytics": true,
+  "EnableGoogleAnalytics": false,
   "GoogleAnalyticsUA" : "[DISABLED]",
   "GoogleAnalyticsDomain" : "[DISABLED]"
 }
