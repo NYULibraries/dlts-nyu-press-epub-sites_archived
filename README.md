@@ -11,8 +11,8 @@ This repo replaces the original, individual repos:
 * [dlts-connected-youth](https://github.com/NYULibraries/dlts-connected-youth)
 * [dlts-open-access-books](https://github.com/NYULibraries/dlts-open-access-books)
 
-This is just a working, in-process repo until we decide whether we want to migrate
-this to a generalized static site generation system.
+This is just a temporary, in-process repo for consolidating existing builders, to be used until we decide whether we
+want to migrate this to a generalized static site generation system.
 
 ### Setup
 
@@ -30,7 +30,37 @@ cp dev.json local.json
 # Edit local.json
 ```
 
-Sample `local.json`:
+#### Sample `local.json` files
+
+Assuming:
+
+* Built instances will be served from ```http://localhost/[SITE]```
+* ReadiumJS viewer `cloud-reader` is being used and is accessed at ```http://localhost/readium-js-viewer/dist/cloud-reader```.
+ (Note: do not include "/cloud-reader" in the ```readiumUrl``` value)
+* Metadata is from the prod Solr index
+
+source/connected-youth/json/conf/local.json:
+
+```json
+{
+  "appName": "New York University Press",
+
+  "collectionCode": "connected-youth",
+
+  "appUrl": "http://localhost/connected-youth",
+  "appRoot": "",
+
+  "discovery": "http://discovery.dlib.nyu.edu:8080/solr3_discovery/nyupress",
+
+  "readiumUrl" : "http://localhost/readium-js-viewer/dist",
+
+  "EnableGoogleAnalytics": false,
+  "GoogleAnalyticsUA" : "[DISABLED]",
+  "GoogleAnalyticsDomain" : "[DISABLED]"
+}
+```
+
+source/open-access-books/json/conf/local.json:
 
 ```json
 {
@@ -38,10 +68,10 @@ Sample `local.json`:
 
   "collectionCode": "oa-books",
 
-  "appUrl": "http://openaccessbooks-local",
+  "appUrl": "http://localhost/open-access-books",
   "appRoot": "",
 
-  "discovery": "http://dev-discovery.dlib.nyu.edu:8080/solr3_discovery/nyupress",
+  "discovery": "http://discovery.dlib.nyu.edu:8080/solr3_discovery/nyupress",
 
   "readiumUrl" : "http://localhost/readium-js-viewer/dist",
 
