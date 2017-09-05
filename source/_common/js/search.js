@@ -48,12 +48,18 @@ YUI().use(
                         '&'                                      +
                         'qt=dismax'                              +
                         '&'                                      +
+
+                        // Can't use encodeURIComponent on the whole value because
+                        // Solr apparently gets confused by the encoded "+" characters.
+                        // For details, see:
+                        // https://jira.nyu.edu/jira/browse/NYUP-276?focusedCommentId=86023&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-86023
                         'qf='                                    +
-                            'title^2'                            +
+                            encodeURIComponent( 'title^2' )      +
                             '+'                                  +
-                            'author^2'                           +
+                            encodeURIComponent( 'author^2' )     +
                             '+'                                  +
                             'text'                               +
+
                         '&'                                      +
                         'rows=' + docslength                     +
                         '&'                                      +
