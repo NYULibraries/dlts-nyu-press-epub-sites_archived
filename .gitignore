@@ -37,8 +37,5 @@ source/open-access-books/json/datasources/*
 .idea
 *.iml
 
-# project sub modules
-!node_modules/grunt-contrib-writehtml
-
 # Emacs files
 *~
