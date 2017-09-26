@@ -14,9 +14,16 @@ YUI().use(
 
     'use strict';
 
+    // See https://jira.nyu.edu/jira/browse/NYUP-290:
+    // "Open Access Books site -- lazy loading not loading in Chrome 61"
+    //
+    // We are going to remove infinite scrolling completely.  This is just a quick
+    // emergency hack to fix the current Chrome problem.
+    const DEFAULT_DOCSLENGTH = 1999;
+
     var body = Y.one('body')
       , container = Y.one('.library-items')
-      , docslength = parseInt(container.getAttribute("data-docslength"), 10)
+      , docslength = container.getAttribute("data-docslength") ? parseInt(container.getAttribute("data-docslength"), 10) : DEFAULT_DOCSLENGTH
       , query = Y.one('.query')
       , loadMoreButton = Y.one('.pure-button.loading')
       , totalFound = Y.one('.total-found')
