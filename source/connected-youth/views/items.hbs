@@ -2,8 +2,8 @@
 {{#items}}
   <div itemscope itemtype="http://schema.org/Book" class="library-item">
     <div class="img_hold">
-      <a class="item-link" href="<%appUrl%>/details/{{identifier}}">
-        <img itemprop="image" class="img-responsive" src="<%readiumUrl%>/{{thumbHref}}" title="{{title}}" alt="" />
+      <a aria-hidden="true" role="presentation" tabindex="-1" class="item-link" href="<%appUrl%>/details/{{identifier}}">
+        <img itemprop="image" class="img-responsive" src="<%readiumUrl%>/{{thumbHref}}" title="{{title}}" alt=""  role="presentation" />
       </a>
     </div>
     <div class="book-info">
