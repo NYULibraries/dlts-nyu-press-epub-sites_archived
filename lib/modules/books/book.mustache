@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <title>{{appName}}: {{title}}</title>
   {{> head }}
@@ -9,7 +9,7 @@
 <body class="page book" data-app="{{appUrl}}" data-readium="{{readiumUrl}}">
 
   {{> header }}
-  <iframe  class="nyup-iframe" src="{{readiumUrl}}/cloud-reader/?epub=epub_content/{{id}}&embedded=true" allowfullscreen mozallowfullscreen webkitallowfullscreen seamless="seamless" frameBorder="0"></iframe>
+  <iframe role="main" title="Read book online" class="nyup-iframe" src="{{readiumUrl}}/cloud-reader/?epub=epub_content/{{id}}&embedded=true" allowfullscreen mozallowfullscreen webkitallowfullscreen seamless="seamless" frameBorder="0"></iframe>
  
   {{> footerbookpage }}
 
