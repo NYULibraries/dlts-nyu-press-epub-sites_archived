@@ -6,7 +6,7 @@
   "appUrl": "http://connectedyouth-test",
   "appRoot": "",
 
-  "discovery": "http://fake-discovery.dlib.nyu.edu:8080/solr3_discovery/nyupress",
+  "discovery": "http://discovery.dlib.nyu.edu:8080/solr3_discovery/nyupress",
 
   "environment": "test",
 
