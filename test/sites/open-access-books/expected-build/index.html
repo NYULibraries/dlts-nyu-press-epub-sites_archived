@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
   <title>New York University Press: Browse titles</title>
   <meta charset="utf-8">
@@ -11,7 +12,7 @@
   <meta property="og:url" content="http://openaccessbooks-test/index.html">
   <meta property="og:title" content="Browse titles">
   <meta property="og:description" content="">
-  <meta property="og:image" content="http://openaccessbooks.nyupress.org/NYUPressOA/">
+  <meta property="og:image" content="http://openaccessbooks.nyupress.org/oabooks-reader/">
   <meta property="og:image:width" content="200">
   <meta name="format-detection" content="telephone=no">
   <link rel="stylesheet" href="http://openaccessbooks-test/css/bootstrap.css"> 
@@ -26,6 +27,7 @@
   ga("set", "anonymizeIp", true);
   ga('send', 'pageview');
   </script></head>
+
 <body class="home list-view" data-app="http://openaccessbooks-test" data-discovery="http://discovery.dlib.nyu.edu:8080/solr3_discovery/nyupress" data-collection-code="oa-books" data-script="{ &quot;js&quot; : [ &quot;dlts-util.js&quot;, &quot;front.js&quot; ], &quot;hbs&quot; : [ { &quot;template&quot; : &quot;items.hbs&quot;, &quot;id&quot; : &quot;list-template&quot; } ] }">
   <div class="header">
     <nav class="navbar" role="navigation" id="navbar-fixed-top">
@@ -45,29 +47,36 @@
       </div>
     </nav>
   </div>  <div class="content-wrapper">
-      <div class="data-container" role="main">
-        <div class="intro">
-        <p><span>NYU Press is pleased to offer these books in an open access platform for reading on desktop and mobile devices.</span> We will continue to contribute new titles each year. <a href="http://openaccessbooks-test/about" class="readmore">Read more about the project...</a></p>
-      </div>
-        <h2 class="page-title">Browse all titles</h2>
-       <div class="library-items flex-container"></div>
-      </div>
-      <ul class="pure-paginator"></ul>
-      <div class="pure-g container more-books">
-        <div class="pure-u-1">
-          <a href="#" class="pure-button loading">More books</a>
+    <div class="data-container" role="main">
+      <div class="open-square-move">
+        <div class="osq-logo"><img src="images/opensquare_logo.png" alt="Open Square: Knowledge without Boundaries"></div>
+        <div class="osq-text">
+          <div><b>Coming soon!</b> The content on this site will be moving to Open Square, NYU Press’ new platform for open access books (opensquare.nyupress.org). Open Square will allow us to introduce new features and improvements, making our books easier to find, read, and share. </div>
         </div>
       </div>
-      <footer id="pagefooter">
-        <div class="footer-inner">
-          <ul>
-            <li><span><a href="http://openaccessbooks-test/about">About</a></span></li>
-            <li><span><a href="http://openaccessbooks-test/rights">Rights Information</a></span></li>
-            <li id="nyup-link"><span><a href="http://nyupress.org/" target="_blank">NYU Press</a></span></li>
-            <li id="dlts-link"><span>Powered by <a href="http://dlib.nyu.edu/dlts/" target="_blank">NYU DLTS</a></span></li>
-          </ul>
-        </div>
-      </footer>
+      <div class="intro">
+        <p><span>NYU Press is pleased to offer these books in an open access platform for reading on desktop and mobile devices.</span> We will continue to contribute new titles each year. <a href="http://openaccessbooks-test/about" class="readmore">Read more about
+            the project...</a></p>
+      </div>
+      <h2 class="page-title">Browse all titles</h2>
+      <div class="library-items flex-container"></div>
+    </div>
+    <ul class="pure-paginator"></ul>
+    <div class="pure-g container more-books">
+      <div class="pure-u-1">
+        <a href="#" class="pure-button loading">More books</a>
+      </div>
+    </div>
+    <footer id="pagefooter">
+      <div class="footer-inner">
+        <ul>
+          <li><span><a href="http://openaccessbooks-test/about">About</a></span></li>
+          <li><span><a href="http://openaccessbooks-test/rights">Rights Information</a></span></li>
+          <li id="nyup-link"><span><a href="http://nyupress.org/" target="_blank">NYU Press</a></span></li>
+          <li id="dlts-link"><span>Powered by <a href="http://dlib.nyu.edu/dlts/" target="_blank">NYU DLTS</a></span></li>
+        </ul>
+      </div>
+    </footer>
   </div>
   <script type="text/x-handlebars-template" id="list-template">{{#items}}
   <article itemscope itemtype="http://schema.org/Book" class="library-item">
@@ -92,4 +101,5 @@
 {{/items}}
 </script><script src="http://openaccessbooks-test/js/dlts-util.js" defer="defer"></script><script src="http://openaccessbooks-test/js/front.js" defer="defer"></script>
 </body>
+
 </html>
