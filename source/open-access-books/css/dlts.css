@@ -973,12 +973,17 @@ input.searchbox:focus {
 }
 
 .osq-logo {
-  flex: 0 0 385px;
+  flex: 0 0 33.3%;
+  max-width: 385px;
 }
 
 .osq-text {
-  flex: 1 1 auto;
-  padding: 10px;
-  font-family: 'Gotham SSm 3r', 'Gotham SSm A', 'Gotham SSm B', 'Helvetica Neue', Helvetica, sans-serif;
+  flex: 1 1 66%;
+
   color: #333333;
+}
+
+.osq-text>div {
+  padding: 10px 30px 10px 20px  ;
+  max-width:66em;
 }
