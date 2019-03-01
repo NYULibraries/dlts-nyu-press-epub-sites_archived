@@ -1,29 +1,37 @@
 <!doctype html>
 <html>
+
 <head>
   <title>{{appName}}: {{title}}</title>
   {{> head }}
 </head>
-<body class="home list-view" data-app="{{appUrl}}" data-discovery="{{discovery}}"
-      data-collection-code="{{collectionCode}}"
-      data-script='{ "js" : [ "dlts-util.js", "front.js" ], "hbs" : [ { "template" : "items.hbs", "id" : "list-template" } ] }'>
+
+<body class="home list-view" data-app="{{appUrl}}" data-discovery="{{discovery}}" data-collection-code="{{collectionCode}}" data-script='{ "js" : [ "dlts-util.js", "front.js" ], "hbs" : [ { "template" : "items.hbs", "id" : "list-template" } ] }'>
   {{> header }}
   <div class="content-wrapper">
-      <div class="data-container" role="main">
-        <div class="intro">
-        <p><span>NYU Press is pleased to offer these books in an open access platform for reading on desktop and mobile devices.</span> We will continue to contribute new titles each year. <a href="{{appUrl}}/about" class="readmore">Read more about the project...</a></p>
-      </div>
-        <h2 class="page-title">Browse all titles</h2>
-       <div class="library-items flex-container"></div>
-      </div>
-      <ul class="pure-paginator"></ul>
-      <div class="pure-g container more-books">
-        <div class="pure-u-1">
-          <a href="#" class="pure-button loading">More books</a>
+    <div class="data-container" role="main">
+      <div class="open-square-move">
+        <div class="osq-logo"><img src="images/opensquare_logo.png" alt="Open Square: Knowledge without Boundaries"></div>
+        <div class="osq-text">
+          <div><b>Coming soon!</b> The content on this site will be moving to Open Square, NYU Press’ new platform for open access books (opensquare.nyupress.org). Open Square will allow us to introduce new features and improvements, making our books easier to find, read, and share. </div>
         </div>
       </div>
-      {{> footer }}
+      <div class="intro">
+        <p><span>NYU Press is pleased to offer these books in an open access platform for reading on desktop and mobile devices.</span> We will continue to contribute new titles each year. <a href="{{appUrl}}/about" class="readmore">Read more about
+            the project...</a></p>
+      </div>
+      <h2 class="page-title">Browse all titles</h2>
+      <div class="library-items flex-container"></div>
+    </div>
+    <ul class="pure-paginator"></ul>
+    <div class="pure-g container more-books">
+      <div class="pure-u-1">
+        <a href="#" class="pure-button loading">More books</a>
+      </div>
+    </div>
+    {{> footer }}
   </div>
   {{{closure}}}
 </body>
+
 </html>

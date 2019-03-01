@@ -1,7 +1,6 @@
 /*
  * Custom Skin for NYU Press Open Access Books site
  */
-
 body {
   padding: 0;
   min-width: 300px;
@@ -20,7 +19,7 @@ h6 {
 
 a:link,
 a:visited {
-  color: #6FA64D;
+  color: #348402;
 }
 
 body.io-loading {
@@ -33,14 +32,12 @@ body.io-loading {
   white-space: nowrap;
 }
 
-
 /*a[target="_blank"] {
     background-position: center right;
     background-repeat: no-repeat;
     background-image: url(../images/ext_link_icon.svg);
     padding-right: 13px;
 }*/
-
 a.btn {
   color: #333;
 }
@@ -58,9 +55,7 @@ a.btn {
   background: url(../images/oa_logo_sprite.png) no-repeat right bottom;
 }
 
-
 /* overriding bootstrap */
-
 .breadcrumb {
   background-color: #F5F5F5;
   border-radius: 0px;
@@ -195,17 +190,17 @@ footer#pagefooter li {
   color: white;
 }
 
-footer#pagefooter li + li:before {
+footer#pagefooter li+li:before {
   content: "|";
   color: #999;
 }
 
-footer#pagefooter li > span {
+footer#pagefooter li>span {
   padding: 0 0 0 10px;
   display: inline-block;
 }
 
-footer#pagefooter li.social > span > span {
+footer#pagefooter li.social>span>span {
   padding: auto;
   width: 16px;
 }
@@ -435,16 +430,15 @@ a.info-icon {
 
 .item-link {
   display: block;
+  font-weight: 500;
 }
 
 .item-link:hover .book-title {
   text-decoration: underline;
 }
 
-
 /* Sticky footer styles  http://getbootstrap.com/examples/sticky-footer/sticky-footer.css
 -------------------------------------------------- */
-
 html {
   position: relative;
   min-height: 100%;
@@ -463,12 +457,8 @@ body.page footer#pagefooter {
   height: 42px;
 }
 
-
 /*  Navigation */
-
-
 /*  ------------------------------------------------------------------------- */
-
 .navbar {
   min-height: 55px;
   position: relative;
@@ -554,7 +544,7 @@ body.page footer#pagefooter {
   display: table-row;
 }
 
-.navbar header > * {
+.navbar header>* {
   padding: 5px 0 5px 10px;
   display: table-cell;
   vertical-align: middle;
@@ -602,15 +592,9 @@ a#s-btn img {
   height: auto;
 }
 
-
 /*  End Navigation */
-
-
 /*  Search */
-
-
 /*  ------------------------------------------------------------------------- */
-
 .searchform label {
   right: -999em;
   position: absolute;
@@ -662,18 +646,20 @@ input.searchbox:focus {
     font: normal 200 27px / 1 'Gotham 2r', 'Gotham A', 'Gotham B', 'Helvetica Neue', Helvetica, sans-serif;
     padding-bottom: 8px;
   }
+
   .home .navbar #logo-replace,
   .home .navbar #logo-replace a {
     height: 75px;
     width: 160px;
   }
-  .home .navbar header > * {
+
+  .home .navbar header>* {
     display: table-cell;
     vertical-align: bottom;
   }
 }
 
-.navbar header > * {
+.navbar header>* {
   padding: 10px 0 10px 10px;
 }
 
@@ -687,32 +673,40 @@ input.searchbox:focus {
   .library-items {
     margin: 1rem 0px 0px;
   }
+
   h2.page-title {
     margin: 0px;
   }
+
   .breadcrumb .page-title {
     padding: 8px 15px 6px 0;
   }
+
   footer#pagefooter li a:link,
   footer#pagefooter li a:visited {
     margin-bottom: 1rem;
     margin: 0px;
     /* padding: 11px 10px 7px;*/
   }
+
   footer#pagefooter li#dlts-link a:link,
   footer#pagefooter li#dlts-link a:visited {
     padding-left: 0;
   }
-  footer#pagefooter li#dlts-link > span {
+
+  footer#pagefooter li#dlts-link>span {
     /* padding-left: 20px;*/
   }
+
   .footer-inner {
     padding: 2px 0 5px;
   }
+
   body.page {
     /* Margin bottom by footer height */
     margin-bottom: 57px;
   }
+
   body.page footer#pagefooter {
     position: absolute;
     bottom: 0;
@@ -720,28 +714,34 @@ input.searchbox:focus {
     /* Set the fixed height of the footer here */
     height: 57px;
   }
+
   .navbar .reader .icon-full-screen {
     display: none;
   }
+
   .navbar .reader #logo-replace,
   .home .navbar #logo-replace,
   .navbar #logo-replace {
     height: 40px;
     width: 40px;
   }
+
   .navbar #logo-replace a {
     height: 40px;
     width: 40px;
     background-position: right top;
   }
+
   .navbar header .n-utils {
     vertical-align: bottom;
   }
+
   .navbar .reader #site-title {
     /* Gotham Extra Light = 'Gotham 2r', 'Gotham A', 'Gotham B' */
     font: normal 200 16px / 1.1 'Gotham 2r', 'Gotham A', 'Gotham B', 'Helvetica Neue', Helvetica, sans-serif;
     /* max-width: 15rem;*/
   }
+
   .home .navbar #site-title,
   .page .navbar #site-title,
   .navbar #site-title {
@@ -749,33 +749,40 @@ input.searchbox:focus {
     font: normal 200 18px / 1.1 'Gotham 2r', 'Gotham A', 'Gotham B', 'Helvetica Neue', Helvetica, sans-serif;
     /* max-width: 15rem;*/
   }
+
   .navbar {
     padding: 10px 10px 10px 20px;
   }
+
   .navbar .container,
   .navbar header,
-  .navbar header > *,
+  .navbar header>*,
   .navbar .n-utils,
-  .home .navbar header > * {
+  .home .navbar header>* {
     display: block;
     padding: 0;
   }
+
   .navbar header {
     /* clear floats */
     width: 100%;
     overflow: hidden;
   }
+
   .navbar header h2,
   .navbar header h1 {
     float: left;
   }
+
   .navbar header h1,
   .home .navbar header h1 {
     padding: 10px 0px 0px 10px;
   }
+
   .navbar header .n-utils {
     float: none;
   }
+
   #search-toggle,
   #search-toggle[style] {
     border: none;
@@ -791,22 +798,28 @@ input.searchbox:focus {
     background-size: 50%;
     text-indent: -999em;
   }
+
   #search-toggle.open {
     text-indent: 0;
     background: none;
   }
+
   #search-toggle:focus {
     outline: none;
   }
+
   #search-toggle::-moz-focus-inner {
     border: 0;
   }
+
   .searchform {
     display: none;
   }
+
   .searchform.open {
     display: block;
   }
+
   .searchform input.searchbox {
     width: 100%;
     margin-top: 10px;
@@ -814,15 +827,18 @@ input.searchbox:focus {
     /* 16px and up prevents autozoom in safari iOS */
     font-size: 16px;
   }
+
   .buttons {
     margin: 2em 0 0;
   }
+
   .buttons a {
     margin: .5em 0;
   }
 }
 
 @media screen and (max-width: 350px) {
+
   .home .navbar #site-title,
   .page .navbar #site-title,
   .navbar .reader #site-title,
@@ -837,9 +853,7 @@ input.searchbox:focus {
   border: none;
 }
 
-
 /* flexbox layout */
-
 .flex-container {
   margin-left: -20px;
   display: -ms-flexbox;
@@ -867,16 +881,19 @@ input.searchbox:focus {
   .flex-container {
     margin-left: 0;
   }
+
   .img_hold {
     padding-left: 0;
     padding-bottom: 20px;
     width: 25%;
   }
+
   .flex-container .library-item {
     border-bottom: 1px solid #dedede;
     margin-bottom: 10px;
     padding-bottom: 0px;
   }
+
   .flex-container .library-item.empty-div {
     border-bottom: none;
     margin-bottom: 0px;
@@ -889,23 +906,29 @@ input.searchbox:focus {
     margin: 15px auto 70px;
     overflow: auto;
   }
+
   .flex-container {
     margin-left: 0;
   }
+
   .img_hold {
     padding-left: 0;
   }
+
   .flex-container .library-item {
     border-bottom: 1px solid #dedede;
     margin-bottom: 10px;
     padding-bottom: 0px;
   }
+
   .buttons {
     margin: 1em 0 0;
   }
+
   .breadcrumb {
     padding: 8px 20px 6px;
   }
+
   .detail-item {
     margin-top: 1rem;
   }
@@ -917,24 +940,50 @@ input.searchbox:focus {
     -webkit-flex: 0 1 390px;
     flex: 0 1 390px;
   }
+
   .img_hold,
   .book-info {
     display: block;
     float: left;
     padding-bottom: 5px;
   }
+
   .detail-item .img-hold {
     width: auto;
     max-width: 160px;
     float: none;
     margin: 0 auto 20px;
   }
+
   .detail-item .book-title {
     padding-bottom: 18px;
   }
+
   .buttons {
     margin-top: 0px;
     padding-bottom: 20px;
     float: right;
   }
+}
+
+.open-square-move {
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0px 0px 0px 2px #57068c33, inset 0px -1px 130px 1px #57068c38;
+}
+
+.osq-logo {
+  flex: 0 0 33.3%;
+  max-width: 385px;
+}
+
+.osq-text {
+  flex: 1 1 66%;
+
+  color: #333333;
+}
+
+.osq-text>div {
+  padding: 10px 30px 10px 20px  ;
+  max-width:66em;
 }
