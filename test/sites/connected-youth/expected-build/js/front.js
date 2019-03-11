@@ -30,7 +30,7 @@ YUI().use(
       , datasourceURL = body.getAttribute('data-discovery') +
                         '/select?'                          +
 
-                        'qt=dismax'                         +
+                        'defType=edismax'                   +
                         '&'                                 +
                         'qf=collection_code'                +
                         '&'                                 +

@@ -4,8 +4,8 @@ const CONNECTED_YOUTH_RESPONSE = require( './expected-responses/connected-youth.
 const OPEN_ACCESS_BOOKS_RESPONSE = require( './expected-responses/open-access-books.json' );
 
 const EXPECTED_SOLR_RESPONSE = {
-    'http://discovery.dlib.nyu.edu:8080/solr3_discovery/nyupress/select?wt=json&fl=*&rows=1000&qt=dismax&qf=collection_code&q=connected-youth' : CONNECTED_YOUTH_RESPONSE,
-    'http://discovery.dlib.nyu.edu:8080/solr3_discovery/nyupress/select?wt=json&fl=*&rows=1000&qt=dismax&qf=collection_code&q=oa-books' : OPEN_ACCESS_BOOKS_RESPONSE
+    'http://discovery1.dlib.nyu.edu/solr/open-square-metadata/select?wt=json&fl=*&rows=1000&q=collection_code%3Aconnected-youth' : CONNECTED_YOUTH_RESPONSE,
+    'http://discovery1.dlib.nyu.edu/solr/open-square-metadata/select?wt=json&fl=*&rows=1000&q=collection_code%3Aoa-books' : OPEN_ACCESS_BOOKS_RESPONSE
 };
 
 var request = function( uri, callback ) {
