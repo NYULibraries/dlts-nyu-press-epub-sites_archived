@@ -6,7 +6,7 @@
   "appUrl": "http://connectedyouth-stage.nyupress.org",
   "appRoot": "",
 
-  "discovery": "http://stagediscovery.dlib.nyu.edu:8080/solr3_discovery/nyupress",
+  "discovery": "http://stagediscovery.dlib.nyu.edu/solr/open-square-metadata",
 
   "readiumUrl" : "http://connectedyouth-stage.nyupress.org/oabooks-reader",
 
