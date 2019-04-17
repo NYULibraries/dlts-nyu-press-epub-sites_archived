@@ -1,5 +1,26 @@
-NYU Press EPUB Sites
-====================
+NYU Press EPUB Sites - ARCHIVED
+===============================
+
+---
+
+This is an archive of the application that generated the old
+[Open Access Books](http://openaccessbooks.nyupress.org/) and
+[Connected Youth](http://connectedyouth.nyupress.org/) websites.  It is no longer in use
+but it contains archived development branches that we might want to refer to later.
+The Open Access Books website was replaced by [Open Square](http://opensquare.nyupress.org/).
+The Connected Youth website is being maintained with just home and about pages, with
+most of the content moved to [Open Square](http://opensquare.nyupress.org/).
+
+This repo is superseded by [opensquare-nyudlts](https://github.com/nyudlts/opensquare-nyudlts),
+which builds the [Open Square](http://opensquare.nyupress.org/) website as well as the new
+Connected Youth website.
+
+For details, see:
+
+* [NYUP-144](https://jira.nyu.edu/browse/NYUP-144)
+* [NYUP-605](https://jira.nyu.edu/jira/browse/NYUP-605)
+
+---
 
 Main repo for the building and testing of NYU Press websites:
 
